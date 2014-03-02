@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Reflow</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <script src="lib/jquery-2.1.0.min.js"></script>
+    <script src="main.js"></script>
+    <div id="log"></div>
+    <ul id="main-menu" class="tabs">
+        <li class="active" data-view="device-choice">Devices</li>
+        <li data-view="console">Console</li>
+        <li data-view="controls">Controls</li>
+    </ul>
+    <div id="views">
+        <div class="view" data-name="loading">
+            loading..
+        </div>
+        <div class="view" data-name="device-choice">
+            <h1>Pick device</h1>
+            <ul id="paired-devices-list"></ul>
+        </div>
+        <div class="view" data-name="console">
+            <ul id="message-list"></ul>
+            <div class="placeholder" id="user-message" contenteditable="true">send message</div>
+            <div id="send-message-btn"></div>
+        </div>
+        <div class="view" data-name="controls">
+            <h1>Controls</h1>
+            <button class="action-btn" data-action="ledOn">ON</button>
+            <button class="action-btn" data-action="ledOff">OFF</button>
+        </div>
+    </div>
+</body>
+</html>
