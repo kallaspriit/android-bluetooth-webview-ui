@@ -1,3 +1,11 @@
+if (!window.native) {
+	window.native = {
+		getPairedDevices: function() {
+			return ['Dummy']
+		}
+	}
+}
+
 function log(message) {
     var wrap = $('#log');
 
