@@ -1,0 +1,123 @@
+/* Base tags */
+HTML, BODY {
+    margin: 0;
+    padding: 0;
+}
+UL, LI {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Logging */
+#log {
+    padding: 4px;
+    margin: 0 0 10px 0;
+    font-family: Consolas;
+    font-size: 12px;
+    height: 100px;
+    background-color: #000;
+    color: #FFF;
+    overflow: hidden;
+    overflow-y: auto;
+    display: none;
+}
+.show-log #log {
+    display: block;
+}
+
+/* Views */
+#views {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    background-color: #FFF;
+}
+.show-log #views {
+    top: 100px;
+}
+.view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.view.active {
+    display: block;
+}
+
+/* Tabs */
+.tabs {
+    height: 60px;
+    background-color: #333;
+}
+.tabs > LI {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #FFF;
+}
+.tabs > LI.active {
+    background-color: #FFF;
+    color: #333;
+}
+
+/* Main menu */
+#main-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Console view */
+#message-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    font-family: Consolas;
+    overflow: hidden;
+    overflow-y: auto;
+}
+#message-list > LI {
+    padding: 0 10px;
+}
+#message-list > LI.rx {
+    color: #090;
+}
+#message-list > LI.tx {
+    color: #900;
+}
+#user-message {
+    position: absolute;
+    left: 0;
+    right: 60px;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 60px;
+    padding: 0 10px;
+    line-height: 60px;
+    background-color: #333;
+    font-size: 30px;
+    font-family: Consolas;
+    color: #FFF;
+    outline: none;
+}
+#user-message.placeholder {
+    font-style: italic;
+    color: #CCC;
+}
+#send-message-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    width: 60px;
+    background: #333 url(images/send-icon.png) no-repeat center center;
+}
