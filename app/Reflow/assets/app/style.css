@@ -8,11 +8,21 @@ UL, LI {
     padding: 0;
     list-style: none;
 }
+A {
+	color: #333;
+	text-decoration: none;
+}
+* {
+	-webkit-touch-callout:none;                /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust:none;             /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color:rgba(0,0,0,0); /* prevent tap highlight color / shadow */
+	-webkit-user-select:none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
 
 /* Logging */
 #log {
     padding: 4px;
-    margin: 0 0 10px 0;
+    margin: 0;
     font-family: Consolas;
     font-size: 12px;
     height: 100px;
@@ -36,7 +46,7 @@ UL, LI {
     background-color: #FFF;
 }
 .show-log #views {
-    top: 100px;
+    top: 160px;
 }
 .view {
     position: relative;
@@ -46,6 +56,30 @@ UL, LI {
 }
 .view.active {
     display: block;
+}
+
+/* Container */
+.container {
+	box-sizing: border-box;
+	position: relative;
+	padding: 0 20px;
+	height: 100%;
+}
+
+/* List */
+.list {
+	margin: 0 -20px;
+}
+.list > LI {
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	border-bottom: 1px solid #EEE;
+	background-color: #F8F8F8;
+	font-size: 20px;
+}
+.list > LI:first-child {
+	border-top: 1px solid #EEE;
 }
 
 /* Tabs */
@@ -72,6 +106,28 @@ UL, LI {
     top: 0;
     left: 0;
     width: 100%;
+}
+.show-log #main-menu {
+	top: 100px;
+}
+
+/* Status bar */
+.status-bar {
+	position: absolute;
+	box-sizing: border-box;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #333;
+	color: #FFF;
+}
+
+/* Device choice view */
+.connected {
+	background-color: rgba(56, 255, 0, 0.09) !important;
 }
 
 /* Console view */

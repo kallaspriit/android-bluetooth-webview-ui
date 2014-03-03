@@ -1,10 +1,12 @@
 if (!window.native) {
 	window.native = {
 		getPairedDevices: function() {
-			return ['Dummy']
+			return JSON.stringify(['Dummy']);
 		}
 	}
 }
+
+var connectedDeviceName = null;
 
 function log(message) {
     var wrap = $('#log');
@@ -100,7 +102,7 @@ function updateDevices() {
     log('Paired: ' + JSON.stringify(devices));
 
     for (i = 0; i < devices.length; i++) {
-        wrap.append('<li><a class="device-item" data-name="' + devices[i] + '" href="javascript: void(0)">' + devices[i] + '</a></li>');
+        wrap.append('<li class="device-item' + (devices[i] === connectedDeviceName ? ' connected' : '') + '" data-name="' + devices[i] + '">' + devices[i] + '' + (devices[i] === connectedDeviceName ? ' (connected)' : '') + '</li>');
     }
 
     $('.device-item').click(function() {
@@ -135,11 +137,16 @@ function onBluetoothReady() {
 function onBluetoothConnected(deviceName) {
     log('Bluetooth connected: ' + deviceName);
 
-    showView('console');
+	connectedDeviceName = deviceName;
+
+	updateDevices();
+	showView('device-choice');
 }
 
 function onBluetoothStateChanged(newState) {
     log('Bluetooth state changed to: ' + newState);
+
+	$('#state').html(newState);
 }
 
 function onBluetoothMessageReceived(message) {
